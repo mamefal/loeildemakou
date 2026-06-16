@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Official Brand System: L'œil de Makou */
+    --background: 30 50% 98%; /* Cream #F9F6F2 */
+    --foreground: 0 0% 10%; /* Charcoal #1A1A1A */
+    
+    --primary: 348 65% 10%; /* Burgundy #2A0A0D */
+    --primary-foreground: 30 50% 98%; /* Cream text on Burgundy */
+    
+    --accent: 30 40% 67%; /* Gold-beige #C9A676 */
+    --accent-foreground: 0 0% 10%; /* Charcoal text on Gold-beige */
+    
+    --muted: 30 15% 90%; /* Neutral-gray #E7E3DE */
+    --muted-foreground: 0 0% 40%;
+    
+    --border: 30 15% 90%; /* Neutral-gray #E7E3DE */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    
+    --ring: 348 65% 10%; /* Burgundy */
+    --radius: 0.5rem;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    /* Editorial site defaults to light, but providing dark mode fallbacks */
+    --background: 0 0% 10%;
+    --foreground: 30 50% 98%;
+    --primary: 348 65% 20%;
+    --primary-foreground: 30 50% 98%;
+    --accent: 30 40% 50%;
+    --accent-foreground: 30 50% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    --border: 0 0% 25%;
+    --card: 0 0% 15%;
+    --card-foreground: 30 50% 98%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 30 50% 98%;
+    --ring: 348 65% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-balance;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Overrides */
+.font-serif {
+  font-family: 'Lora', serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Editorial Utilities */
+@layer utilities {
+  .editorial-card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5;
+  }
+  .section-spacing {
+    @apply py-20 md:py-32;
+  }
+}
